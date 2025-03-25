@@ -54,7 +54,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: ${{ env.PGVECTOR_REPO }}
-          ref: v${{ needs.check_version.outputs.version }}
+          ref: v0.8.0
 
       - name: Compile pgvector (macOS)
         if: runner.os == 'macOS'
@@ -164,4 +164,4 @@ jobs:
           name: v0.17.${{ github.run_number }}
           tag_name: v0.17.${{ github.run_number }}
           body: |
-            pgvector v${{ needs.check_version.outputs.version }} for PostgreSQL 17
+            pgvector v0.8.0 for PostgreSQL 17
